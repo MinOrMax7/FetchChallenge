@@ -12,18 +12,20 @@ import Foundation
 
 /// Data Model representing a meal
 struct Meal: Codable, Identifiable {
-    var id: String
-    var name: String
-    var imageURL: URL?
+    var id: UUID?
     
-    enum CoddingKeys: String, CodingKey {
-        case id = "idMeal"
-        case name = "strMeal"
-        case imageURL = "strMealThumb"
-    }
+    var strMeal: String
+    var strMealThumb: URL?
+    var idMeal: String
+//
+//    enum CoddingKeys: String, CodingKey {
+//        case name = "strMeal"
+//        case imageURL = "strMealThumb"
+//        case id = "idMeal"
+//    }
 }
 extension Meal {
-    static var exampleMeal: Meal = Meal(id: "00000", name: "Sample Dish")
+    static var exampleMeal: Meal = Meal(strMeal: "Sample Dish", idMeal: "00000")
 }
 
 /// Data Model representing a dessert
