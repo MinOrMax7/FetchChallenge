@@ -28,18 +28,6 @@ extension Meal {
     static var exampleMeal: Meal = Meal(strMeal: "Sample Dish", idMeal: "00000")
 }
 
-/// Data Model representing a dessert
-struct Dessert: Codable, Identifiable {
-    var id: String
-    var name: String
-    var imageURL: URL?
-    var instructions: String
-    var reciepts: [String: String]
-    
-    var ingredients: [String]
-    var measurements: [String]
-}
-
 
 /// Response from Dish API
 struct MealsResult: Codable {
