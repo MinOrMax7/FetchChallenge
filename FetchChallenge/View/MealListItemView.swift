@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct MealListItemView: View {
+    var meal: Meal
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack(alignment: .leading) {
+                Text(meal.strMeal)
+                    .bold()
+            }
+            Spacer()
+            if let imageURL = meal.strMealThumb {
+                AsyncImage(url: imageURL) { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
+                } placeholder: {
+                    Color.gray
+                }
+                .frame(maxWidth: 100, maxHeight: 100)
+            }
+        }
     }
 }
 
 #Preview {
-    MealListItemView()
+    MealListItemView(meal: Meal.exampleMeal)
 }
